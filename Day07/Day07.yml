@@ -1,0 +1,73 @@
+week4.day1
+
+-> Alert
+-> Break + Breakout
+-> Frame
+-> Breakout
+-> Window Handling
+-> Break
+
+
+Alert:
+Popup message
+Error Message
+Warning Message
+
+*We cannot ingore alert
+
+Modal alert:
+simple alert -> can only one action OK
+confirmation alert -> two action (OK, Cancel)
+prompt alert -> input box, (OK, Cancel)
+
+
+
+page.on
+  url :https://www.leafground.com/alert.xhtml
+
+  get the type and message
+   
+  click on Show button in confirm alert
+  accept
+
+  click on Show button in prompt alert
+  accept("Dilip")
+ 
+
+Frame:
+DOM inside another DOM
+iframe-> inLine Frame
+
+two types of frame 
+-> one frame
+-> nested frame
+
+we can able handle with 3 ways
+-> index based
+-> FrameLocator
+-> FrameObject
+
+
+
+ClassRoom 2:
+https://www.leafground.com/frame.xhtml
+handle frame with FrameLocator and FrameObject for nested frame
+
+Window Hadling :
+to handle multiple window 
+
+create Promise -> 'page'
+preform the action  -> click()
+resolve the promise -> control  from parent to child 
+
+child window -> action
+
+swtich -> child window
+
+Classroom
+https://www.leafground.com/window.xhtml
+-> click on Open button
+-> switch to child page
+-> Child Page -> Enter Message
+-> close childpage
+-> click on open multiple
