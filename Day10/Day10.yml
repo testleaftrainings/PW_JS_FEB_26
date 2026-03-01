@@ -1,0 +1,85 @@
+week5.day2
+
+
+-> CSV
+-> Breakout
+-> Break
+-> Env
+-> Breakout
+-> Test Runner
+
+
+csv -comma separated values
+TestCaseID,Username,password
+Tc001,dilip@testleaf.com,Leaf@123
+Tc002,ravi@testleaf.com,Sales@123
+
+
+step:1 --> install csv-parse
+ npm install csv-parse
+
+step:2 --> use parse() --> imported from csv-parse/sync
+parse(pathofthefile)
+
+step:3 -->install fs (file system)
+npm install fs
+
+Each row will be considered as one test 
+2 tests -->unique desc of the test
+
+path.join(__dirname,"") -->current directory with the filepath
+path.resolve(__dirname,"")
+
+columns-->true -->read first row as header
+
+
+
+
+
+env -->environment file
+-->db ,api token, crendetials -->qa, prod, api
+
+to read data from env file
+
+step:1  -->install dotenv
+npm install dotenv
+
+step:2 --> prod.env
+dotenv.config({path:`constants/prod.env`})
+
+Multiple file to read
+const fileTORead=process.env.envFile
+dotenv.config({path:`constants/${fileTORead}.env`})
+
+set the filename
+$env:envFile="staging"
+$env:envFile="SF_LoginQA"
+
+unset
+$env:envFile=""
+
+$env:envFile="SF_LoginDev"
+
+to know which file is set for execution
+$env:envFile
+
+
+
+
+
+
+
+Test Annotation: configure the Behaviour of the test
+test.only -> run the test which marked as only
+test.skip -> test will not run
+test.fail -> Mark test as expected to fail
+test.fixme -> mark test as not ready yet
+test.use -> override context 
+test.info -> it shows additional information about test
+test.describe -> group your test
+test.describe.parallel -> run tests in parallel
+test.describe.serial -> run tests in serial -> depend on each other
+test.describe.default -> run tests in sequential order
+
+
+fullyparallel:false

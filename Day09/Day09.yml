@@ -1,0 +1,105 @@
+-> Storage State
+-> Breakout
+-> Break
+-> Window Handling
+-> Data Parameterization(Json)
+-> Breakout
+
+
+
+
+Storage state:
+
+Skip the login code 
+
+150 TC -> Login function(15 to 20 sec)
+20*150 -> 3000s
+
+Skip the 
+http://leaftaps.com/crmsfa/control/main
+username: demosalesmanager, DemoCsr2
+password: crmsfa
+click on Login
+click on crmsfa 
+--Create Storage State -> .json
+await page.context().storageState({path:"Helper/SF_Login1.json"})
+
+create spec file
+-> use StorageState
+test.use({storageState:''})
+->pass Home Page url
+test 1-> click on Leads
+test 2-> click on Contacts
+
+
+Window Handling:
+
+Create Promise
+perform the Action
+Resolve Promise-> switch from parent window to child window
+
+
+
+Data Driven Testing:
+
+
+-> Json
+-> Csv
+-> Env
+
+Json -->javascript object notation
+
+ key : value
+
+ key => tcName,Username,Password
+ value => Tc001,Demosalesmanager,crmsfa
+
+single Set of data: {}
+{
+"tcName":"TC001"
+"UserName":"Demosalesmanager"
+"Password":"crmsfa"
+}
+
+
+Multiple set of data: [{},{}]
+[ {
+  key :  value
+"TestID":"Tc001"
+"username":"Democsr"
+"password":"crmsfa"
+
+},
+
+{
+key :  value
+"TestID":"Tc002"
+"username":"Demosalesmanager"
+"password":"crmsfa"
+}]
+    key value pair
+
+
+import loginInfo from '../../Data/LT_Login.json'
+
+test(`Read json data`,async()=>{
+
+for(let login of loginInfo){
+    console.log(login.Username)
+}
+})
+
+Classroom:
+https://login.salesforce.com/?locale=in
+
+testID
+dilipkumar.rajendran@testleaf.com
+TestLeaf@2025
+
+manikandanleo4922@agentforce.com
+India@2026
+
+steps:
+-> create folder as utils -> create json file 
+-> pass values in json file
+-> Create Test 
